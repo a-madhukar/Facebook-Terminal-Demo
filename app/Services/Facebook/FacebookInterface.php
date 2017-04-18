@@ -6,5 +6,6 @@ interface FacebookInterface
 {
 
 	public function displayUserPosts(); 
+	public function postToUserTimeline($message); 
 
 }

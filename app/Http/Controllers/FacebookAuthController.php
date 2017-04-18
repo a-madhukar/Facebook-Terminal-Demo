@@ -17,7 +17,7 @@ class FacebookAuthController extends Controller
     public function redirectToProvider()
     {
         return Socialite::driver('facebook')
-        ->scopes(['user_posts','public_profile'])
+        ->scopes(['user_posts','public_profile','publish_actions'])
         ->redirect();
     }
 

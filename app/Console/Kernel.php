@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         //
         Commands\DisplayUserFbPosts::class, 
+        Commands\PostToUserTimeline::class, 
     ];
 
     /**

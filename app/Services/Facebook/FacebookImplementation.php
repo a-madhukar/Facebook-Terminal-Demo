@@ -30,4 +30,22 @@ class FacebookImplementation implements FacebookInterface
 		return collect(json_decode($response->getBody())->data); 
 	}
 
+
+
+
+
+	public function postToUserTimeline($message,$user = null)
+	{
+		$user = $user ?: auth()->user(); 
+
+		$linkData = is_array($message) ? $message : [
+			'link' => '', 
+			'message' => $message
+		]; 
+
+		 $response = $this->fb->post('/me/feed', $linkData, $user->access_token);
+		 return $response; 
+	}
+
+
 }
