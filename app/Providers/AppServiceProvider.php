@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Services\Facebook\FacebookInterface; 
+use App\Services\Facebook\FacebookImplementation; 
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(FacebookInterface::class, FacebookImplementation::class); 
     }
 }

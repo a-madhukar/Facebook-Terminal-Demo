@@ -32,7 +32,7 @@ class FacebookAuthController extends Controller
     		Socialite::driver('facebook')->user()
     	)->login(); 
 
-    	dd($user); 
+    	// dd($user); 
 
   //   	$fb = new Facebook([
   //   		'app_id' => config('services.facebook.client_id'),
@@ -52,6 +52,6 @@ class FacebookAuthController extends Controller
 
     	// auth()->login($user); 
 
-    	// return redirect()->route('home'); 
+    	return redirect()->route('home'); 
     }
 }
