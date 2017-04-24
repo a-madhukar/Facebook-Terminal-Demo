@@ -29,7 +29,11 @@ class User extends Authenticatable
 
 
 
-
+    /**
+     * Save a new user based on the attributes
+     * @param  stdObject $attributes 
+     * @return $this             
+     */
     public static function saveFbUser($attributes)
     {
         $instance = (new static)->firstOrNew([
@@ -41,6 +45,11 @@ class User extends Authenticatable
 
 
 
+    /**
+     * Fill up the properties based on the class
+     * @param  stdObject $attributes 
+     * @return $this             
+     */
     public function build($attributes)
     {
         return $this->fill([
@@ -52,6 +61,10 @@ class User extends Authenticatable
 
 
 
+    /**
+     * Helper method to log the user in 
+     * @return $this 
+     */
     public function login()
     {
         auth()->login($this); 

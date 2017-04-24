@@ -31,27 +31,7 @@ class FacebookAuthController extends Controller
     	$user = User::saveFbUser(
     		Socialite::driver('facebook')->user()
     	)->login(); 
-
-    	// dd($user); 
-
-  //   	$fb = new Facebook([
-  //   		'app_id' => config('services.facebook.client_id'),
-  //   		'app_secret' => config('services.facebook.client_secret'),
-  //   		'default_graph_version' => 'v2.8',
-		// ]);
-
-		// dump($fb); 
-
-		// $response = $fb->get("/me/feed", $user->token); 
-
-		// dd($response); 
-
-     //    $user = User::handleFBAuth(
-     //    	Socialite::driver('facebook')->user()
-    	// );
-
-    	// auth()->login($user); 
-
+    	
     	return redirect()->route('home'); 
     }
 }
